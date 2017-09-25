@@ -1,0 +1,25 @@
+
+<div class="col-md-8">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody style="text-align: left">
+    <tr *ngFor="let i of Customers" (click)="sendChildDetails(i)">
+      <td>{{i.Id}}</td>
+      <td>{{i.Name}}</td>
+      <td>{{i.Email}}</td>
+      <td>{{i.Status}}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="col-md-4">
+<app-inputchild [CustomerDetails]="CustomerDs">Loading...</app-inputchild>
+</div>

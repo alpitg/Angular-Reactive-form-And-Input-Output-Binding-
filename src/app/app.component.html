@@ -1,0 +1,68 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<div style="text-align:center">
+  <h1>
+    Register Here
+  </h1>
+  <br>
+  <br>
+</div>
+
+<!--<app-inputBinding></app-inputBinding>-->
+
+<!--<app-outputBinding></app-outputBinding>-->
+
+
+
+<div class="row text-center" >
+
+  <div class="col-sm-4">
+  </div>
+
+  <div class="col-sm-4 container">
+    <md-card>
+
+      <form [formGroup]="fStudentData" (ngSubmit)="onAddStudent(fStudentData)" role="form" action="POST">
+
+        <div class="form-group">
+
+          <md-form-field class="example-full-width">
+
+            <input mdInput placeholder="First Name" name="FirstName" formControlName="FirstName">
+            <md-hint align="end" style="color: red" *ngIf="fStudentData.get('FirstName').touched && fStudentData.get('FirstName').hasError('required')">Required</md-hint>
+            <md-hint align="end" style="color: red" *ngIf="fStudentData.get('FirstName').touched && fStudentData.get('FirstName').hasError('minlength')">Min 5 character Required</md-hint>
+
+          </md-form-field>
+
+          <md-form-field class="example-full-width">
+            <input mdInput placeholder="Last Name" name="LastName" formControlName="LastName">
+            <md-hint align="end" style="color: red" *ngIf="fStudentData.get('LastName').touched && fStudentData.get('LastName').hasError('required')">Required</md-hint>
+            <md-hint align="end" style="color: red" *ngIf="fStudentData.get('LastName').touched && fStudentData.get('LastName').hasError('minlength')">Min 5 character Required</md-hint>
+
+          </md-form-field>
+
+          <md-form-field class="example-full-width">
+            <input mdInput placeholder="Email" name="Email" formControlName="Email">
+            <md-hint align="end" style="color: red" *ngIf="fStudentData.get('Email').touched && fStudentData.get('Email').hasError('required')">Required</md-hint>
+            <md-hint align="center" style="color: red" *ngIf="fStudentData.get('Email').dirty && fStudentData.get('Email').hasError('email')">Please enter valid email</md-hint>
+
+          </md-form-field>
+
+        </div>
+
+        <button md-fab color="primary" type="submit" [disabled]="!fStudentData.valid">Submit</button>
+
+      </form>
+    </md-card>
+
+
+
+  </div>
+
+  <div class="col-sm-4">
+  </div>
+
+
+</div>
